@@ -1,0 +1,29 @@
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  cp = cherry-pick
+  ri = rebase --interactive
+  br = branch
+  treea = log --graph --oneline --decorate --color --all
+  tree = log --graph --oneline --decorate --color
+  ln = log --pretty=format:'%Cblue%h %Cred* %C(yellow)%s'
+[branch]
+  autosetuprebase = always
+[color]
+  ui = auto
+[core]
+  editor = vim
+  whitespace = warn
+[help]
+  autocorrect = 10
+[interactive]
+  singlekey = true
+[merge]
+  summary = true
+[push]
+  default = simple
+[rebase]
+  autosquash = true
+[include]
+  path = ~/.gitconfig.local
