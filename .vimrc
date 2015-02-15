@@ -1,18 +1,15 @@
+set nocompatible "required by Vundle
 runtime! autoload/pathogen.vim
 
+execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
-if exists('g:loaded_pathogen')
-  execute pathogen#infect()
-endif
 
 augroup vimrc
   autocmd!
   autocmd GuiEnter * set columns=120 lines=70 number
 augroup END
 
-set nocompatible "required by Vundle
 filetype off     "required by Vundle
 
 " set the runtime path to include Vundle and initialize
@@ -142,40 +139,30 @@ nnoremap <leader>j :%!python -m json.tool<cr>
 " git commit messages get 50/72 vertical bars
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set colorcolumn=60,80
 
-"select current word using space
-map , viw
-
 " move lines
 no <down> ddp
 no <up> ddkP
-
-" surround current word with "
-noremap <leader>2 viw<esc>a"<esc>hbi"<esc>lel
 
 " indent all file
 map <leader>i mmgg=G'm<CR>
 
 "paste from clipboard
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
 "copy to clipboard
 map <leader>y "+y
+
 "copy currentline to clipboard
 map <leader>Y "+y
 
-"shortcut exit  insert mode
-imap jk <esc>
-"shortcut exit  visual mode
-vmap <leader>jk <esc>
-"shortcut for save :write  on visual mode
+"shortcut for save :write on visual mode
 nmap s :wa<cr>
 nmap S :x<cr>
+
 "shortcut for close (:q) buffer
 map <leader>q <esc>:q<cr>
 map <leader>Q <esc>:q!<cr>
-"Quick save to repo as WIP
-map <Leader>gwip :!git add . && git commit -m 'WIP' && git push origin<cr>
-"mapping for GIT
-map gt :Gstatus<cr>
+
 "Easymotion mapping
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
@@ -186,17 +173,14 @@ nmap <Leader>t <Plug>(easymotion-t2)
 
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_y= '%{strftime("%c")}'
 
 " vim tab navigation
-
 nnoremap th :tabfirst<CR>
 nnoremap tj :tabprev<CR>
 nnoremap tk :tabnext<CR>
 nnoremap tl :tablast<CR>
 nnoremap tc :tabclose<CR>
 nnoremap tn :tabnew<CR>
-
 
 "I really hate that things don't auto-center
 nmap G Gzz
@@ -205,21 +189,13 @@ nmap N Nzz
 nmap } }zz
 nmap { {zz
 
-"quick pairs
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
 " RSpec.vim mappings
-nmap ,t :call RunCurrentSpecFile()<CR>
-nmap ,s :call RunNearestSpec()<CR>
-nmap ,l :call RunLastSpec()<CR>
-nmap ,a :call RunAllSpecs()<CR>
-" let g:rspec_runner = "os_x_iterm"
+nmap <Leader>t :call RunCurrentSpecFile()<CR>
+nmap <Leader>s :call RunNearestSpec()<CR>
+nmap <Leader>l :call RunLastSpec()<CR>
+nmap <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "call Send_to_Tmux('spring rspec {spec}\n')"
 let g:user_emmet_leader_key='<Tab>'
-" map for commetary usin cm is more friendly"
-map cm gc
 " use F to search"
 noremap F /
 
@@ -239,8 +215,11 @@ endif
 " NERDTree config
 let NERDTreeIgnore=['\~$', 'tmp', '\.git', '\.bundle', '.DS_Store', 'tags', '.swp']
 let NERDTreeShowHidden=1
-map <Leader>n :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeFocus<CR>
 map <Leader>fnt :NERDTreeFind<CR>
+
+" Powerline
+let g:airline_powerline_fonts = 1
 
 " Disable vim backups
 set nobackup
