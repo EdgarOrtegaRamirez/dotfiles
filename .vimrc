@@ -212,12 +212,6 @@ if get(g:, 'loaded_ctrlp', 1)
   \ }
 endif
 
-" NERDTree config
-let NERDTreeIgnore=['\~$', 'tmp', '\.git', '\.bundle', '.DS_Store', 'tags', '.swp']
-let NERDTreeShowHidden=1
-map <Leader>n :NERDTreeFocus<CR>
-map <Leader>fnt :NERDTreeFind<CR>
-
 " Powerline
 let g:airline_powerline_fonts = 1
 
@@ -226,3 +220,9 @@ set nobackup
 
 " Disable swapfile
 set noswapfile
+
+" NERDTree config
+let NERDTreeIgnore=['\~$', 'tmp', '\.git', '\.bundle', '.DS_Store', 'tags', '.swp']
+let NERDTreeShowHidden=1
+map <leader>n :NERDTreeToggle<CR>
+map <Leader>fnt :NERDTreeFind<CR>
