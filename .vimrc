@@ -57,6 +57,7 @@ Plugin 'jgdavey/vim-turbux'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'othree/html5.vim'
 
 call vundle#end()         " required
 filetype plugin indent on " required
