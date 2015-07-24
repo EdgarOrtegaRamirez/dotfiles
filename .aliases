@@ -26,3 +26,8 @@ alias reset-authors='git commit --amend --reset-author -C HEAD'
 
 # Bundler
 alias be='bundle exec'
+
+# Shell
+alias ls='ls --color'
+alias h='history'
+alias psg='ps aux | grep'
