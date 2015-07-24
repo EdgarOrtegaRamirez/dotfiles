@@ -184,6 +184,10 @@ nnoremap tl :tablast<CR>
 nnoremap tc :tabclose<CR>
 nnoremap tn :tabnew<CR>
 
+" vim split windows
+nnoremap <leader>- :spl
+nnoremap <leader><pipe> :vsp
+
 "I really hate that things don't auto-center
 nmap G Gzz
 nmap n nzz
