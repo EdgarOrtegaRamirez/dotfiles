@@ -59,6 +59,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'othree/html5.vim'
 Plugin 'slim-template/vim-slim.git'
+Plugin 'isRuslan/vim-es6'
 
 call vundle#end()         " required
 filetype plugin indent on " required
